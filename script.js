@@ -99,7 +99,7 @@ function callcountry(country) {
     });
 }
 
-//callcountry('bangladesh');
+// callcountry('bangladesh');
 
 //////////////////////////////////////////////////////////////
 
@@ -135,7 +135,7 @@ const whereAmI = function ([lat, long]) {
       return programe.json();
     })
     .then(data => {
-       callcountry(data.country.toLowerCase());
+      callcountry(data.country.toLowerCase());
       return console.log(`You are in ${data.city},${data.country}`);
     });
 };
@@ -299,26 +299,26 @@ navigator.geolocation.getCurrentPosition(function (position) {
 // makeArray('bangladesh', 'usa', 'china');
 /////////////////////////////////////////////////////////
 
-const wait = function (time) {
-  const promiseTime = new Promise(function (resolve) {
-    setTimeout(resolve, time * 1000);
-  });
-  return promiseTime;
-};
-let currentImage;
-const creatImage = function (path) {
-  return new Promise(function (resolve, reject) {
-    const img = document.createElement('img');
-    img.src = path;
-    img.addEventListener('load', function () {
-      imageContainer.append(img);
-      resolve(img);
-    });
-    img.addEventListener('erro', function () {
-      reject();
-    });
-  });
-};
+// const wait = function (time) {
+//   const promiseTime = new Promise(function (resolve) {
+//     setTimeout(resolve, time * 1000);
+//   });
+//   return promiseTime;
+// };
+// let currentImage;
+// const creatImage = function (path) {
+//   return new Promise(function (resolve, reject) {
+//     const img = document.createElement('img');
+//     img.src = path;
+//     img.addEventListener('load', function () {
+//       imageContainer.append(img);
+//       resolve(img);
+//     });
+//     img.addEventListener('erro', function () {
+//       reject();
+//     });
+//   });
+// };
 
 // const imageShower = async function () {
 //   try {
@@ -357,15 +357,15 @@ const dataArr = ['img/img-1.jpg', 'img/img-2.jpg', 'img/img-3.jpg'];
 //  4. Use a promise conbinator function to actually get the images from the array
 //  5. Add the 'parelell' class to all the images (it has some Css styles ).
 
-const loadAll = async function (imgArr) {
-  try {
-    const elImg = await imgArr.map(async el => await creatImage(el));
-    console.log(elImg);
-    const elImgPrm = await Promise.all(elImg);
-    console.log(elImgPrm);
-    elImgPrm.forEach(img => img.classList.add('parallel'));
-  } catch (err) {
-    console.error(err);
-  }
-};
-loadAll(dataArr);
+// const loadAll = async function (imgArr) {
+//   try {
+//     const elImg = await imgArr.map(async el => await creatImage(el));
+//     console.log(elImg);
+//     const elImgPrm = await Promise.all(elImg);
+//     console.log(elImgPrm);
+//     elImgPrm.forEach(img => img.classList.add('parallel'));
+//   } catch (err) {
+//     console.error(err);
+//   }
+// };
+// loadAll(dataArr);
