@@ -99,7 +99,7 @@ function callcountry(country) {
     });
 }
 
-callcountry('bangladesh');
+//callcountry('bangladesh');
 
 //////////////////////////////////////////////////////////////
 
@@ -135,7 +135,7 @@ const whereAmI = function ([lat, long]) {
       return programe.json();
     })
     .then(data => {
-      // callcountry(data.country.toLowerCase());
+       callcountry(data.country.toLowerCase());
       return console.log(`You are in ${data.city},${data.country}`);
     });
 };
